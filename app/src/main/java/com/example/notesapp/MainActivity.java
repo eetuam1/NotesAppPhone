@@ -30,12 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         noteList = new ArrayList<>();
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveNote();
-            }
-        });
+        saveButton.setOnClickListener(v -> saveNote());
 
         loadNotesFromPreferences();
         displayNotes();
@@ -100,12 +95,7 @@ public class MainActivity extends AppCompatActivity {
         contentTextView.setText(note.getContent());
 
         // Set onClickListener instead of onLongClickListener
-        noteView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDeleteDialog(note);
-            }
-        });
+        noteView.setOnClickListener(v -> showDeleteDialog(note));
 
         notesContainer.addView(noteView);
     }
@@ -115,19 +105,9 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Delete this note");
         builder.setMessage("Are you sure you want to delete this note?");
 
-        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                deleteNoteAndRefresh(note);
-            }
-        });
+        builder.setPositiveButton("Delete", (dialog, which) -> deleteNoteAndRefresh(note));
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
 
         builder.show();
     }

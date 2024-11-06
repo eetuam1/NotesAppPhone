@@ -4,6 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3f2311"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
@@ -11,52 +12,56 @@
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
-        android:background="@drawable/edittext_bg"
-        android:layout_height="46dp"
+        android:layout_height="51dp"
+        android:background="#ffebb7"
+        android:hint="Note Title"
         android:paddingLeft="10dp"
-        android:textColor="@color/black"
-        android:hint="Note Title"/>
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
     <EditText
+        android:id="@+id/contentEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Note Content"
+        android:layout_height="167dp"
         android:layout_marginTop="16dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="@drawable/edittext_bg"
-        android:textColor="@color/black"
+        android:background="#ffebb7"
+        android:hint="Note Content"
         android:inputType="textMultiLine"
         android:minLines="5"
-        android:id="@+id/contentEditText"/>
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Saves Notes"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="74dp"
+        android:layout_marginTop="16dp"
+        android:text="Saves Notes" />
 
     <TextView
+        android:id="@+id/noteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notes:"
         android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:id="@+id/noteTextView"/>
+        android:background="#FFFFFF"
+        android:text="Notes:"
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/noteScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/notesContainer"
-        android:orientation="vertical"/>
+        android:layout_weight="1"
+        android:background="#ffebb7">
+
+        <LinearLayout
+            android:id="@+id/notesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
     </ScrollView>
-    
+
 </LinearLayout>

@@ -6,17 +6,14 @@ public class Note {
     private String title;
     private String content;
 
-    // Default constructor
     public Note() {
     }
 
-    // Constructor with parameters
     public Note(String title, String content) {
         this.title = title;
         this.content = content;
     }
 
-    // Getters and Setters
     public String getTitle() {
         return title;
     }
@@ -33,17 +30,16 @@ public class Note {
         this.content = content;
     }
 
-    // Override equals() and hashCode()
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true; // Check if they are the same object
-        if (obj == null || getClass() != obj.getClass()) return false; // Check for null and class type
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Note note = (Note) obj; // Cast to Note
-        return Objects.equals(title, note.title) && Objects.equals(content, note.content); // Compare fields
+        return Objects.equals(title, note.title) && Objects.equals(content, note.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, content); // Create a hash based on fields
+        return Objects.hash(title, content);
     }
 }
